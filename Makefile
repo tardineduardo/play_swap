@@ -17,7 +17,7 @@ MOVES = $(MOVES_PATH)/moves.a
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT) $(MOVES)
-		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MOVES) -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MOVES)
 
 clean:
 		$(RM) $(NAME)
