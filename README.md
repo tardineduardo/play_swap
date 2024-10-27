@@ -4,7 +4,7 @@
 
 - Type "*tabs -4*" in your terminal to ensure the tab alignment works.
 
-- Run ./play_swap 3 4 5 2, etc. You can enter as many integers as you want, but larger values (3+ digits) will misalign the stack. (Why would you even need that? But anyway, it's a sandbox — help yourself!)
+- Run ./a.out 3 4 5 2, etc. You can enter as many integers as you want, but larger values (3+ digits) will misalign the stack. (Why would you even need that? But anyway, it's a sandbox — help yourself!)
 
 - Movements are stored in **moves.txt**.
 
