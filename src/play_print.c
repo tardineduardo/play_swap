@@ -18,33 +18,33 @@ static void	put_a(t_dll **a, bool *index)
 	int m = (*a)->index;
 	if (*index)
 	{
-		ft_printf(RED "\t\t\t+-----------+\n" RESET);
-		ft_printf(RED "\t\t\t|\t" RESET "%i" BLUE "\t%i" RED "\t|\n" RESET, i, m);
-		ft_printf(RED "\t\t\t+-----------+\n" RESET);
+		printf(RED "\t\t\t+-----------+\n" RESET);
+		printf(RED "\t\t\t|\t" RESET "%i" BLUE "\t%i" RED "\t|\n" RESET, i, m);
+		printf(RED "\t\t\t+-----------+\n" RESET);
 	}
 	else
 	{
-		ft_printf(RED "\t\t\t+-------+\n" RESET);
-		ft_printf(RED "\t\t\t|\t" RESET "%i" RED "\t|\n" RESET, i, m);
-		ft_printf(RED "\t\t\t+-------+\n" RESET);
+		printf(RED "\t\t\t+-------+\n" RESET);
+		printf(RED "\t\t\t|\t" RESET "%i" RED "\t|\n" RESET, i);
+		printf(RED "\t\t\t+-------+\n" RESET);
 	}
 }
 
 static void	put_b(t_dll **b, bool *index)
 {
-	int i = (*b)->arg;
+	int j = (*b)->arg;
 	int n = (*b)->index;
 	if (*index)
 	{
-		ft_printf(YELLOW "\t\t\t\t\t\t\t+-----------+\n" RESET);
-		ft_printf(YELLOW "\t\t\t\t\t\t\t|\t" RESET "%i" BLUE "\t%i" YELLOW "\t|\n" RESET, i, n);
-		ft_printf(YELLOW "\t\t\t\t\t\t\t+-----------+\n" RESET);
+		printf(YELLOW "\t\t\t\t\t\t\t+-----------+\n" RESET);
+		printf(YELLOW "\t\t\t\t\t\t\t|\t" RESET "%i" BLUE "\t%i" YELLOW "\t|\n" RESET, j, n);
+		printf(YELLOW "\t\t\t\t\t\t\t+-----------+\n" RESET);
 	}
 	else
 	{
-		ft_printf(YELLOW "\t\t\t\t\t\t+-------+\n" RESET);
-		ft_printf(YELLOW "\t\t\t\t\t\t|\t" RESET "%i" YELLOW "\t|\n" RESET, i, n);
-		ft_printf(YELLOW "\t\t\t\t\t\t+-------+\n" RESET);
+		printf(YELLOW "\t\t\t\t\t\t+-------+\n" RESET);
+		printf(YELLOW "\t\t\t\t\t\t|\t" RESET "%i" YELLOW "\t|\n" RESET, j);
+		printf(YELLOW "\t\t\t\t\t\t+-------+\n" RESET);
 	}
 }
 
@@ -56,15 +56,15 @@ static void	put_ab(t_dll **a, t_dll **b, bool *index)
 	int n = (*b)->index;
 	if (*index)
 	{
-		ft_printf(RED "\t\t\t+-----------+" YELLOW "\t+-----------+\n" RESET);
-		ft_printf(RED "\t\t\t|\t" RESET "%i" BLUE "\t%i" RED "\t|" YELLOW "\t|\t" RESET "%i" BLUE "\t%i" YELLOW "\t|\n", i, m, j, n);
-		ft_printf(RED "\t\t\t+-----------+" YELLOW "\t+-----------+\n" RESET);
+		printf(RED "\t\t\t+-----------+" YELLOW "\t+-----------+\n" RESET);
+		printf(RED "\t\t\t|\t" RESET "%i" BLUE "\t%i" RED "\t|" YELLOW "\t|\t" RESET "%i" BLUE "\t%i" YELLOW "\t|\n", i, m, j, n);
+		printf(RED "\t\t\t+-----------+" YELLOW "\t+-----------+\n" RESET);
 	}
 	else
 	{
-		ft_printf(RED "\t\t\t+-------+" YELLOW "\t+-------+\n" RESET);
-		ft_printf(RED "\t\t\t|\t" RESET "%i " RED "\t|" YELLOW "\t|\t" RESET "%i" YELLOW "\t|\n", i, m, j, n);
-		ft_printf(RED "\t\t\t+-------+" YELLOW "\t+-------+\n" RESET);	
+		printf(RED "\t\t\t+-------+" YELLOW "\t+-------+\n" RESET);
+		printf(RED "\t\t\t|\t" RESET "%i " RED "\t|" YELLOW "\t|\t" RESET "%i" YELLOW "\t|\n", i, j);
+		printf(RED "\t\t\t+-------+" YELLOW "\t+-------+\n" RESET);	
 	}
 }
 
@@ -83,7 +83,7 @@ void	ft_play_print(t_dll **a, t_dll **b, bool *index)
 
 	height = ft_dclstsize(a) + ft_dclstsize(b);
 
-	ft_printf("\n");
+	printf("\n");
 	while (height > 0)
 	{
 		space_a = ft_dclsttrav_to_index(a, height - 1);
@@ -100,7 +100,7 @@ void	ft_play_print(t_dll **a, t_dll **b, bool *index)
 			index_b++;
 		}
 		if (!space_a && !space_b)
-			ft_printf("\n\n\n");
+			printf("\n\n\n");
 		else if (space_a && space_b)
 			put_ab(&trav_a, &trav_b, index);			
 		else if (space_a && !space_b)
@@ -109,11 +109,11 @@ void	ft_play_print(t_dll **a, t_dll **b, bool *index)
 			put_b(&trav_b, index);
 	height--;
 	}
-	ft_printf("____________________________________________________\n");
+	printf("____________________________________________________\n");
 	if (*index)
-		ft_printf("\t\t\t   stack a\t\t   stack b\n");
+		printf("\t\t\t   stack a\t\t   stack b\n");
 	else
-		ft_printf("\t\t\t stack a\t stack b\n");
-	ft_printf("\n");
+		printf("\t\t\t stack a\t stack b\n");
+	printf("\n");
 	return ;
 }

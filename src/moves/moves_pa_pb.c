@@ -51,7 +51,7 @@ void pa(t_info *s, int fd)
 	{
 		s->a = s->b;
 		s->b = NULL;
-		ft_dprintf(fd, "pa\n");
+		dprintf(fd, "pa\n");
 		s->b_len--;
 		s->a_len++;
 		return;
@@ -62,7 +62,7 @@ void pa(t_info *s, int fd)
 		ft_push_single_to_multi(&(s->b), &(s->a));
 	else if (s->b_len >= 1 && s->a_len >= 1)
 		ft_push_multi_to_multi(&(s->b), &(s->a));
-	ft_dprintf(fd, "pa\n");
+	dprintf(fd, "pa\n");
 	s->b_len--;
 	s->a_len++;
 }
@@ -75,7 +75,7 @@ void pb(t_info *s, int fd)
 	{
 		s->b = s->a;
 		s->a = NULL;
-		ft_dprintf(fd, "pb\n");
+		dprintf(fd, "pb\n");
 		s->a_len--;
 		s->b_len++;
 		return;
@@ -86,7 +86,7 @@ void pb(t_info *s, int fd)
 		ft_push_single_to_multi(&(s->a), &(s->b));
 	else if (s->a_len >= 1 && s->b_len >= 1)
 		ft_push_multi_to_multi(&(s->a), &(s->b));
-	ft_dprintf(fd, "pb\n");
+	dprintf(fd, "pb\n");
 	s->a_len--;
 	s->b_len++;
 }

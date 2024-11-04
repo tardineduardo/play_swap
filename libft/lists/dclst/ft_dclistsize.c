@@ -34,7 +34,7 @@ int	ft_dclstsize(t_dll **tail)
 		trav_fwd = trav_fwd->next;
 		if (count_fwd > MAXLISTLOOPS)
 		{
-			ft_dprintf(STDERR_FILENO, "\n! Possible error in doubly circular linked list:\ncircular list doesn't return to *tail after %i steps forward.\n", MAXLISTLOOPS);
+			dprintf(STDERR_FILENO, "\n! Possible error in doubly circular linked list:\ncircular list doesn't return to *tail after %i steps forward.\n", MAXLISTLOOPS);
 			return (-1);
 		}
 	}
@@ -44,7 +44,7 @@ int	ft_dclstsize(t_dll **tail)
 		trav_bck = trav_bck->prev;
 		if (count_bck > MAXLISTLOOPS)
 		{
-			ft_dprintf(STDERR_FILENO, "\n! Possible error in doubly circular linked list:\ncircular list doesn't return to *tail after %i steps back.\n", MAXLISTLOOPS);
+			dprintf(STDERR_FILENO, "\n! Possible error in doubly circular linked list:\ncircular list doesn't return to *tail after %i steps back.\n", MAXLISTLOOPS);
 			return (-1);
 		}
 	}
@@ -52,7 +52,7 @@ int	ft_dclstsize(t_dll **tail)
 		return (count_fwd);
 	else
 	{
-		ft_dprintf(STDERR_FILENO, "\n! Possible error in doubly circular linked list:\n size fwd and bck don't match.\n");
+		dprintf(STDERR_FILENO, "\n! Possible error in doubly circular linked list:\n size fwd and bck don't match.\n");
 		return (-1);
 	}
 }

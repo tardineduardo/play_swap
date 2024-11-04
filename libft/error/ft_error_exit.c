@@ -14,6 +14,6 @@
 
 void	ft_error_exit(char *message, int exit_number)
 {
-	ft_putstr_fd(message, STDERR_FILENO);
+	dprintf(STDERR_FILENO, "%s\n", message);
 	exit(exit_number);
 }

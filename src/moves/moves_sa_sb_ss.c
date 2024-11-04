@@ -39,15 +39,13 @@ static bool	swap(t_dll **tail, int llen)
 void	sa(t_info *s, int fd)
 {
 	if (swap(&(s->a), s->a_len))
-		ft_dprintf(fd, "sa\n");
-	return ;
+		dprintf(fd, "sa\n");
 }
 
 void	sb(t_info *s, int fd)
 {
 	if (swap(&(s->b), s->b_len))
-		ft_dprintf(fd, "sb\n");
-	return ;
+		dprintf(fd, "sb\n");
 }
 
 void	ss(t_info *s, int fd)
@@ -62,10 +60,9 @@ void	ss(t_info *s, int fd)
 	if (swap(&(s->b), s->b_len))
 		sb = true;
 	if (sa && sb)
-		ft_dprintf(fd, "ss\n");
+		dprintf(fd, "ss\n");
 	else if (sa && !sb)
-		ft_dprintf(fd, "sa\n");
+		dprintf(fd, "sa\n");
 	else if (!sa && sb)
-		ft_dprintf(fd, "sb\n");
-	return ;
+		dprintf(fd, "sb\n");
 }

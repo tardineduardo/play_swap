@@ -64,10 +64,10 @@ static void	ft_play(t_info *s)
 		system("clear");
 		ft_play_print(&(s->a), &(s->b), &show_index);
 		if (show_index == false)
-			ft_printf("( " GREEN "pa pb " CYAN "sa sb ss " MAGENTA "ra rb rr " BRIGHT_GREEN "rra rrb rrr " RESET ") (\"i\" show index, \"q\" quit)\n\n");
+			printf("( " GREEN "pa pb " CYAN "sa sb ss " MAGENTA "ra rb rr " BRIGHT_GREEN "rra rrb rrr " RESET ") (\"i\" show index, \"q\" quit)\n\n");
 		if (show_index == true)
-			ft_printf("( " GREEN "pa pb " CYAN "sa sb ss " MAGENTA "ra rb rr " BRIGHT_GREEN "rra rrb rrr " RESET ") (\"i\" hide index, \"q\" quit)\n\n");
-		ft_printf("type a command: ");
+			printf("( " GREEN "pa pb " CYAN "sa sb ss " MAGENTA "ra rb rr " BRIGHT_GREEN "rra rrb rrr " RESET ") (\"i\" hide index, \"q\" quit)\n\n");
+		printf("type a command: ");
 		scanf("%3s", cmd);
 		move(cmd, s, &show_index);
 		fflush(stdin);

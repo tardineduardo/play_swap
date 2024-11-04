@@ -17,8 +17,7 @@ void	ra(t_info *s, int fd)
 	if (s->a_len == 0 || s->a_len == 1)
 		return ;
 	s->a = s->a->next;
-	ft_dprintf(fd, "ra\n");
-	return ;
+	dprintf(fd, "rra\n");
 }
 
 void	rb(t_info *s, int fd)
@@ -26,8 +25,7 @@ void	rb(t_info *s, int fd)
 	if (s->b_len == 0 || s->b_len == 1)
 		return ;
 	s->b = s->b->next;
-	ft_dprintf(fd, "rb\n");
-	return ;
+	dprintf(fd, "rb\n");
 }
 
 void	rr(t_info *s, int fd)
@@ -48,10 +46,9 @@ void	rr(t_info *s, int fd)
 		b = true;
 	}
 	if (a && b)
-		ft_dprintf(fd, "rr\n");
+		dprintf(fd, "rr\n");
 	else if (a && !b)
-		ft_dprintf(fd, "ra\n");
+		dprintf(fd, "ra\n");
 	else if (!a && b)
-		ft_dprintf(fd, "rb\n");
-	return ;
+		dprintf(fd, "rb\n");
 }
